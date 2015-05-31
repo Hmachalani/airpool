@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3929D01A1B0D8054004D32C0 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3929D0191B0D8054004D32C0 /* MapViewController.m */; };
 		39C3879D1B0C5F0700684889 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 39C3879C1B0C5F0700684889 /* main.m */; };
 		39C387A01B0C5F0700684889 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 39C3879F1B0C5F0700684889 /* AppDelegate.m */; };
 		39C387A31B0C5F0700684889 /* airpool.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 39C387A11B0C5F0700684889 /* airpool.xcdatamodeld */; };
@@ -15,6 +16,8 @@
 		39C387AB1B0C5F0800684889 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39C387AA1B0C5F0800684889 /* Images.xcassets */; };
 		39C387AE1B0C5F0800684889 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39C387AC1B0C5F0800684889 /* LaunchScreen.xib */; };
 		39C387BA1B0C5F0800684889 /* airpoolTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 39C387B91B0C5F0800684889 /* airpoolTests.m */; };
+		39C387CC1B0C626C00684889 /* GoogleMapsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39C387CB1B0C626C00684889 /* GoogleMapsViewController.m */; };
+		C2D7FBEB3CB90211BF47F0B9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A5A5AF626B81F403D21D5914 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,6 +31,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1155EC18C38379DD917918D8 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		3929D0181B0D8054004D32C0 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		3929D0191B0D8054004D32C0 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		39C387971B0C5F0700684889 /* airpool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = airpool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39C3879B1B0C5F0700684889 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		39C3879C1B0C5F0700684889 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -42,6 +48,10 @@
 		39C387B31B0C5F0800684889 /* airpoolTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = airpoolTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		39C387B81B0C5F0800684889 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		39C387B91B0C5F0800684889 /* airpoolTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = airpoolTests.m; sourceTree = "<group>"; };
+		39C387CA1B0C626C00684889 /* GoogleMapsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoogleMapsViewController.h; sourceTree = "<group>"; };
+		39C387CB1B0C626C00684889 /* GoogleMapsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoogleMapsViewController.m; sourceTree = "<group>"; };
+		74472D746D77A14F56AFFD75 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		A5A5AF626B81F403D21D5914 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2D7FBEB3CB90211BF47F0B9 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,12 +73,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1D73954F434BB7939B52757B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A5A5AF626B81F403D21D5914 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		39C3878E1B0C5F0700684889 = {
 			isa = PBXGroup;
 			children = (
 				39C387991B0C5F0700684889 /* airpool */,
 				39C387B61B0C5F0800684889 /* airpoolTests */,
 				39C387981B0C5F0700684889 /* Products */,
+				D65AAD3F526B55B449CC9666 /* Pods */,
+				1D73954F434BB7939B52757B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -83,6 +104,7 @@
 		39C387991B0C5F0700684889 /* airpool */ = {
 			isa = PBXGroup;
 			children = (
+				39C387C61B0C61EA00684889 /* Map */,
 				39C3879E1B0C5F0700684889 /* AppDelegate.h */,
 				39C3879F1B0C5F0700684889 /* AppDelegate.m */,
 				39C387A41B0C5F0700684889 /* ViewController.h */,
@@ -122,6 +144,26 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		39C387C61B0C61EA00684889 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				39C387CA1B0C626C00684889 /* GoogleMapsViewController.h */,
+				39C387CB1B0C626C00684889 /* GoogleMapsViewController.m */,
+				3929D0181B0D8054004D32C0 /* MapViewController.h */,
+				3929D0191B0D8054004D32C0 /* MapViewController.m */,
+			);
+			name = Map;
+			sourceTree = "<group>";
+		};
+		D65AAD3F526B55B449CC9666 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				74472D746D77A14F56AFFD75 /* Pods.debug.xcconfig */,
+				1155EC18C38379DD917918D8 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -129,9 +171,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 39C387BD1B0C5F0800684889 /* Build configuration list for PBXNativeTarget "airpool" */;
 			buildPhases = (
+				39C2A7EBEDBA288ADA810CFD /* Check Pods Manifest.lock */,
 				39C387931B0C5F0700684889 /* Sources */,
 				39C387941B0C5F0700684889 /* Frameworks */,
 				39C387951B0C5F0700684889 /* Resources */,
+				71A66C57E5A2724B9DB65355 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -217,6 +261,39 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		39C2A7EBEDBA288ADA810CFD /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		71A66C57E5A2724B9DB65355 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		39C387931B0C5F0700684889 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -225,6 +302,8 @@
 				39C387A01B0C5F0700684889 /* AppDelegate.m in Sources */,
 				39C387A31B0C5F0700684889 /* airpool.xcdatamodeld in Sources */,
 				39C387A61B0C5F0700684889 /* ViewController.m in Sources */,
+				3929D01A1B0D8054004D32C0 /* MapViewController.m in Sources */,
+				39C387CC1B0C626C00684889 /* GoogleMapsViewController.m in Sources */,
 				39C3879D1B0C5F0700684889 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -349,6 +428,7 @@
 		};
 		39C387BE1B0C5F0800684889 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 74472D746D77A14F56AFFD75 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = airpool/Info.plist;
@@ -359,6 +439,7 @@
 		};
 		39C387BF1B0C5F0800684889 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1155EC18C38379DD917918D8 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = airpool/Info.plist;
@@ -420,6 +501,7 @@
 				39C387BF1B0C5F0800684889 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		39C387C01B0C5F0800684889 /* Build configuration list for PBXNativeTarget "airpoolTests" */ = {
 			isa = XCConfigurationList;
@@ -428,6 +510,7 @@
 				39C387C21B0C5F0800684889 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
