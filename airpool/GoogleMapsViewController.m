@@ -31,6 +31,9 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *fromLocation;
 
+@property (weak, nonatomic) IBOutlet UIView *navigationBarView;
+@property (weak, nonatomic) IBOutlet UIView *clockView;
+
 
 @end
 
@@ -49,6 +52,17 @@ NSString *const API_KEY = @"AIzaSyANwK1-_P5Bk4Wj8FBSr4dr9mY5flM5_R4";
     self.geocoder=[[GMSGeocoder alloc] init];
     
     self.locationManager = [[CLLocationManager alloc] init];
+    
+    
+    // style stuff //
+    
+    CALayer *bottomBorder = [CALayer layer];
+    bottomBorder.frame = CGRectMake(0.0f, self.navigationBarView.frame.size.height, self.navigationBarView.frame.size.width, 0.5f);
+    bottomBorder.backgroundColor = [UIColor colorWithRed:0.58 green:0.54 blue:0.54 alpha:1.0].CGColor;
+    [self.navigationBarView.layer addSublayer:bottomBorder];
+    
+    // location stuff //
+    
     self.locationManager.delegate = self;
     self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     
@@ -58,6 +72,7 @@ NSString *const API_KEY = @"AIzaSyANwK1-_P5Bk4Wj8FBSr4dr9mY5flM5_R4";
     [self.locationManager startUpdatingLocation];
     
     
+
     GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:-33.868
                                                             longitude:151.2086
                                                                  zoom:17];
