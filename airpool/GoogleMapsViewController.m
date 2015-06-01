@@ -29,6 +29,7 @@
 
 @property (nonatomic) UIButton *requestButton;
 
+@property (weak, nonatomic) IBOutlet UILabel *fromLocation;
 
 
 @end
@@ -124,7 +125,7 @@ NSString *const API_KEY = @"AIzaSyANwK1-_P5Bk4Wj8FBSr4dr9mY5flM5_R4";
             {
                 self.startLocationAddress=response.firstResult;
                 NSLog(@"Placemark is:%@",self.startLocationAddress.thoroughfare);
-                
+                self.fromLocation.text=self.startLocationAddress.thoroughfare;
             }
     
         
