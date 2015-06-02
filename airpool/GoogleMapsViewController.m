@@ -33,6 +33,7 @@
 
 @property (weak, nonatomic) IBOutlet UIView *navigationBarView;
 @property (weak, nonatomic) IBOutlet UIView *clockView;
+@property (weak, nonatomic) IBOutlet UIView *addressView;
 
 
 @end
@@ -56,10 +57,28 @@ NSString *const API_KEY = @"AIzaSyANwK1-_P5Bk4Wj8FBSr4dr9mY5flM5_R4";
     
     // style stuff //
     
+    UIColor *borderColor=[UIColor colorWithRed:0.58 green:0.54 blue:0.54 alpha:1.0];
     CALayer *bottomBorder = [CALayer layer];
     bottomBorder.frame = CGRectMake(0.0f, self.navigationBarView.frame.size.height, self.navigationBarView.frame.size.width, 0.5f);
-    bottomBorder.backgroundColor = [UIColor colorWithRed:0.58 green:0.54 blue:0.54 alpha:1.0].CGColor;
+    bottomBorder.backgroundColor = borderColor.CGColor;
     [self.navigationBarView.layer addSublayer:bottomBorder];
+    
+    self.clockView.layer.borderWidth=0.5f;
+    self.clockView.layer.borderColor=borderColor.CGColor;
+    
+   
+    self.addressView.layer.borderWidth=0.5f;
+    self.addressView.layer.borderColor=borderColor.CGColor;
+    
+   
+    /*
+    CALayer *leftBorderClock = [CALayer layer];
+    leftBorderClock.frame = CGRectMake( 0.0f,0.0f, 0.5f, self.clockView.frame.size.height);
+    leftBorderClock.backgroundColor = [UIColor colorWithRed:0.58 green:0.54 blue:0.54 alpha:1.0].CGColor;
+    [self.clockView.layer addSublayer:leftBorderClock];
+     */
+    
+    
     
     // location stuff //
     
@@ -97,6 +116,26 @@ NSString *const API_KEY = @"AIzaSyANwK1-_P5Bk4Wj8FBSr4dr9mY5flM5_R4";
     });
     
 }
+
+- (void) viewDidLayoutSubviews{
+    [super viewDidLayoutSubviews];
+    
+    UIColor *borderColor=[UIColor colorWithRed:0.58 green:0.54 blue:0.54 alpha:1.0];
+
+    
+    [self roundCorners:self.addressView
+               corners:(UIRectCornerTopLeft|UIRectCornerBottomLeft)
+                radius:5.0f
+                 color:borderColor
+           borderWidth:0.5f];
+    
+    [self roundCorners:self.clockView
+               corners:(UIRectCornerTopRight|UIRectCornerBottomRight)
+                radius:5.0f
+                 color:borderColor
+           borderWidth:0.5f];
+}
+
 
 - (void) updateMarker:(CLLocationCoordinate2D) position
 {
@@ -191,5 +230,32 @@ NSString *const API_KEY = @"AIzaSyANwK1-_P5Bk4Wj8FBSr4dr9mY5flM5_R4";
     // Pass the selected object to the new view controller.
 }
 */
+
+
+
+#pragma mark - Helper functions
+-(void)roundCorners:(UIView *)view corners:(UIRectCorner)corners radius:(CGFloat)radius color:(UIColor *) color borderWidth:(CGFloat)borderWidth
+{
+
+    CGRect bounds = view.bounds;
+    UIBezierPath *maskPath = [UIBezierPath bezierPathWithRoundedRect:bounds
+                                                   byRoundingCorners:corners
+                                                         cornerRadii:CGSizeMake(radius, radius)];
+    
+    CAShapeLayer *maskLayer = [CAShapeLayer layer];
+    maskLayer.frame = bounds;
+    maskLayer.path = maskPath.CGPath;
+    
+    view.layer.mask = maskLayer;
+    
+    CAShapeLayer*   frameLayer = [CAShapeLayer layer];
+    frameLayer.frame = bounds;
+    frameLayer.path = maskPath.CGPath;
+    frameLayer.strokeColor = color.CGColor;
+    frameLayer.fillColor = nil;
+    frameLayer.lineWidth = borderWidth*2;
+    
+    [view.layer addSublayer:frameLayer];
+}
 
 @end
