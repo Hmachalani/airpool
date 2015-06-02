@@ -34,6 +34,7 @@
 @property (weak, nonatomic) IBOutlet UIView *navigationBarView;
 @property (weak, nonatomic) IBOutlet UIView *clockView;
 @property (weak, nonatomic) IBOutlet UIView *addressView;
+@property (weak, nonatomic) IBOutlet UIView *addressContainerView;
 
 
 @end
@@ -57,27 +58,25 @@ NSString *const API_KEY = @"AIzaSyANwK1-_P5Bk4Wj8FBSr4dr9mY5flM5_R4";
     
     // style stuff //
     
-    UIColor *borderColor=[UIColor colorWithRed:0.58 green:0.54 blue:0.54 alpha:1.0];
+    UIColor *borderColor=[UIColor colorWithRed:0.73 green:0.73 blue:0.73 alpha:1.0];
     CALayer *bottomBorder = [CALayer layer];
     bottomBorder.frame = CGRectMake(0.0f, self.navigationBarView.frame.size.height, self.navigationBarView.frame.size.width, 0.5f);
     bottomBorder.backgroundColor = borderColor.CGColor;
     [self.navigationBarView.layer addSublayer:bottomBorder];
     
-    self.clockView.layer.borderWidth=0.5f;
-    self.clockView.layer.borderColor=borderColor.CGColor;
+    self.addressContainerView.layer.borderWidth=0.5f;
+    self.addressContainerView.layer.borderColor=borderColor.CGColor;
+    
+    self.addressContainerView.layer.cornerRadius = 5;
+    self.addressContainerView.layer.masksToBounds = YES;
+    
+
+
+    
+    
+    
     
    
-    self.addressView.layer.borderWidth=0.5f;
-    self.addressView.layer.borderColor=borderColor.CGColor;
-    
-   
-    /*
-    CALayer *leftBorderClock = [CALayer layer];
-    leftBorderClock.frame = CGRectMake( 0.0f,0.0f, 0.5f, self.clockView.frame.size.height);
-    leftBorderClock.backgroundColor = [UIColor colorWithRed:0.58 green:0.54 blue:0.54 alpha:1.0].CGColor;
-    [self.clockView.layer addSublayer:leftBorderClock];
-     */
-    
     
     
     // location stuff //
@@ -120,9 +119,10 @@ NSString *const API_KEY = @"AIzaSyANwK1-_P5Bk4Wj8FBSr4dr9mY5flM5_R4";
 - (void) viewDidLayoutSubviews{
     [super viewDidLayoutSubviews];
     
-    UIColor *borderColor=[UIColor colorWithRed:0.58 green:0.54 blue:0.54 alpha:1.0];
 
     
+    
+    /*
     [self roundCorners:self.addressView
                corners:(UIRectCornerTopLeft|UIRectCornerBottomLeft)
                 radius:5.0f
@@ -134,6 +134,7 @@ NSString *const API_KEY = @"AIzaSyANwK1-_P5Bk4Wj8FBSr4dr9mY5flM5_R4";
                 radius:5.0f
                  color:borderColor
            borderWidth:0.5f];
+     */
 }
 
 
@@ -180,6 +181,8 @@ NSString *const API_KEY = @"AIzaSyANwK1-_P5Bk4Wj8FBSr4dr9mY5flM5_R4";
                 self.startLocationAddress=response.firstResult;
                 NSLog(@"Placemark is:%@",self.startLocationAddress.thoroughfare);
                 self.fromLocation.text=self.startLocationAddress.thoroughfare;
+                
+                //TODO: Verify for null values and replace with "Pin location or invalid location".
             }
     
         
